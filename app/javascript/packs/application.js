@@ -8,7 +8,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 
-require("../hotpepper")
+require("./hotpepper")
 require("./geolocation")
 //= require jquery3
 //= require popper
