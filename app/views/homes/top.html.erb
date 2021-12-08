@@ -1,29 +1,6 @@
-<head>
-  <script>
-    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    function successCallback(position) {
-      var gl_text = "緯度：" + position.coords.latitude + "<br>";
-        gl_text += "経度：" + position.coords.longitude + "<br>";
-      document.getElementById("show_result").innerHTML = gl_text;
-    }
-    function errorCallback(error) {
-      var err_msg = "";
-      switch(error.code)
-      {
-        case 1:
-          err_msg = "位置情報の利用が許可されていません";
-          break;
-        case 2:
-          err_msg = "デバイスの位置が判定できません";
-          break;
-        case 3:
-          err_msg = "タイムアウトしました";
-          break;
-      }
-      document.getElementById("show_result").innerHTML = err_msg;
-    }
-  </script>
-</head>
+<% content_for :head do %>
+  <%= javascript_pack_tag "geolocation" %>
+<% end %>
+<div class="container">
 
-<p>あなたの現在位置</p>
-<div id="show_result"></div>
+</div>
