@@ -1,7 +1,7 @@
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 function successCallback(position) {
-  console.log('経度:'+ position.coords.longitude)
-  console.log('緯度:'+ position.coords.latitude)
+  console.log('経度:'+ position.coords.longitude);
+  console.log('緯度:'+ position.coords.latitude);
 }
 function errorCallback(error) {
   var err_msg = "";
@@ -17,5 +17,5 @@ function errorCallback(error) {
       err_msg = "タイムアウトしました";
       break;
   }
-  document.getElementById("show_result").innerHTML = err_msg;
+  console.log(err_msg);
 }
