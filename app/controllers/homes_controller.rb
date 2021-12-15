@@ -5,11 +5,11 @@ class HomesController < ApplicationController
   def search
     keyid = ENV['HOTPEPPER_API']
     count = 100
-    lat = "34.7606787"
-    lng = "135.6235744"
+    lat = "35.658"
+    lng = "139.7016"
     format = "json"
     params = {"key":keyid, "count":count, "lat":lat, "lng":lng,"format":format}
-    @restaurants = [["名称","アクセス","画像"]]
+    @restaurants = [["名称"]]
     uri = URI.parse("http://webservice.recruit.co.jp/hotpepper/gourmet/v1/")
     uri.query = URI.encode_www_form(params)  
     json_res = Net::HTTP.get uri
@@ -21,8 +21,8 @@ class HomesController < ApplicationController
     end
     for @restaurant in @response["results"]["shop"] do
       @rest_info = [@restaurant["name"], @restaurant["access"], @restaurant["photo"]["pc"]["l"]]
-      puts @rest_info
-      @restaurants.append(@rest_info)
+
+       @restaurants.append(@rest_info)
     end
   end
 

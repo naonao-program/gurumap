@@ -35,9 +35,11 @@
         </ul>
     </template>
 
-    <script type="text/javascript" src="main.js"></script>
+    
 
-<% @response["results"]["shop"].each do |shop| %>
-  <%= shop %>
-<% end %>
-<%# <%= @restaurants.join(",") %> 
+<%# <% @response["results"]["shop"].each do |shop| %>
+  <%# <%= shop %> 
+<%# <% end %>
+
+<%= @restaurants.join(",") %> 
+

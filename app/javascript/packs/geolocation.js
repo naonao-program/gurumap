@@ -1,7 +1,10 @@
+
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 function successCallback(position) {
   console.log('経度:'+ position.coords.longitude);
   console.log('緯度:'+ position.coords.latitude);
+  var longitude = position.coords.longitude;
+  var latitude = position.coords.latitude;
 }
 function errorCallback(error) {
   var err_msg = "";
