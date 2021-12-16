@@ -64,6 +64,8 @@ gem 'httparty', '0.13.5'
 
 gem 'pry-rails'
 
+gem 'gon'
+
 gem 'dotenv-rails'
 
 gem 'httpclient'

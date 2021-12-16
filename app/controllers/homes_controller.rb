@@ -3,6 +3,7 @@ class HomesController < ApplicationController
   require 'uri'
   require 'json'
   def search
+    gon.keyid = ENV['HOTPEPPER_API']
     keyid = ENV['HOTPEPPER_API']
     count = 100
     lat = "35.658"
@@ -24,6 +25,7 @@ class HomesController < ApplicationController
 
        @restaurants.append(@rest_info)
     end
+
   end
 
   def create
