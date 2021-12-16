@@ -69,3 +69,5 @@ gem 'gon'
 gem 'dotenv-rails'
 
 gem 'httpclient'
+
+gem 'rack-cors'
