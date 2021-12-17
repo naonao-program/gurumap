@@ -4,21 +4,33 @@
     click.addEventListener('click', function(){
       const ranges = document.form1.ranges;
       const num = ranges.selectedIndex;
-      const API_KEY = '64c59eed4873e844'
+      const API_KEY = gon.hotpepper_key;
         // 現在地の取得
       navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
       function successCallback(position) {
-        console.log('経度:'+ position.coords.longitude);
-        console.log('緯度:'+ position.coords.latitude);
         var longitude = position.coords.longitude;
         var latitude = position.coords.latitude;
-        console.log(num);
         const url = 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=' + API_KEY + '&lng=' + longitude + '&lat=' + latitude + '&range' + num + '&order=4'
 
-        fetch(url).then(function(response) {
+        
+        // 取得
+        // var request = new XMLHttpRequest();
+        // request.open('GET', url, true);
+        // request.responseType = 'json';
+        // request.onload = function () {
+        //   var data = this.response;
+        //   console.log(data);
+        // }
+        // // リクエストをURLに送信
+        // request.send();
+        
+        fetch(url,{
+        }).then(function(response) {
           return response.text();
         }).then(function(text) {
+          
           console.log(text);
+          document.getElementById('page').innerHTML = text
         });
       }
       function errorCallback(error) {
