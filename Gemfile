@@ -59,3 +59,15 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 
 gem 'coffee-rails'
+
+gem 'httparty', '0.13.5'
+
+gem 'pry-rails'
+
+gem 'gon'
+
+gem 'dotenv-rails'
+
+gem 'httpclient'
+
+gem 'rack-cors'
