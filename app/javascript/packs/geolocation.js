@@ -21,6 +21,8 @@ window.addEventListener('load',function() {
           a +=  '<li>' + '<a>' + '<img src =' + JSON.stringify(json.results.shop[i].logo_image) + '>' +'店名'+ JSON.stringify(json.results.shop[i].name) + 'アクセス' + JSON.stringify(json.results.shop[i].access) + '</a>' +'</li>'
         }
         document.getElementById('page').innerHTML = a;
+
+        // お店が10件以上見つかったらページネーションをする
       });
     }
     function errorCallback(error) {

@@ -1,22 +1,21 @@
 <% content_for :head do %>
   <%= javascript_pack_tag "geolocation" %>
 <% end %>
-    <a href="https://webservice.recruit.co.jp/"><img src="https://webservice.recruit.co.jp/banner/hotpepper-s.gif" alt="ホットペッパー Webサービス" width="135" height="17" border="0" title="ホットペッパー Webサービス"></a>
-    <h1 id = "results">検索条件入力画面</h1>
-    <div class="top">
-        <form name="form1">
-            <label for="ranges">検索範囲</label>
-            <select id="ranges">
-                <option value="0">---</option>
-                <option value="1">300m</option>
-                <option value="2">500m</option>
-                <option value="3">1000m </option>
-                <option value="4">2000m </option>
-                <option value="5">3000m </option>
-            </select>
-        </form>
-        <button value="1" data-page="1" id='btn'>現在地取得</button><br />
-    </div>
-    <div id="page">
-    </div>
-
+<a href="https://webservice.recruit.co.jp/"><img src="https://webservice.recruit.co.jp/banner/hotpepper-s.gif" alt="ホットペッパー Webサービス" width="135" height="17" border="0" title="ホットペッパー Webサービス"></a>
+<h1 id = "results">検索条件入力画面</h1>
+<div class="top">
+    <form name="form1">
+        <label for="ranges">検索範囲</label>
+        <select id="ranges">
+            <option value="0">---</option>
+            <option value="1">300m</option>
+            <option value="2">500m</option>
+            <option value="3">1000m </option>
+            <option value="4">2000m </option>
+            <option value="5">3000m </option>
+        </select>
+    </form>
+    <button value="1" data-page="1" id='btn'>現在地取得</button><br />
+</div>
+<div id="page">
+</div>
