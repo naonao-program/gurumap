@@ -1,10 +1,9 @@
 var page = location.href;
 const API_KEY = gon.hotpepper_key;
-
-
 window.addEventListener('load',function() {
   const click = document.getElementById('btn')
   click.addEventListener('click', function(){
+    document.getElementById('page').innerHTML = '読み込み中…'
     document.getElementById('results').innerHTML = '検索結果'
     const ranges = document.form1.ranges;
     const num = ranges.selectedIndex;
@@ -21,7 +20,7 @@ window.addEventListener('load',function() {
       }).then(function(json) {
         var a = '';
         for(var i = 0; i < JSON.stringify(json.results.shop.length); i++){
-          a +=  '<li>' + '<a href="homes/' + i + '" id= "text">' + '<img src =' + JSON.stringify(json.results.shop[i].logo_image) + '>' +'店名'+ JSON.stringify(json.results.shop[i].name) + 'アクセス' + JSON.stringify(json.results.shop[i].access) + '</a>' +'</li>'
+          a +=  '<li>' + '<a href="homes/' + i + '" id= "text">' + '<img src =' + JSON.stringify(json.results.shop[i].logo_image) + '>' +'店名:'+ JSON.stringify(json.results.shop[i].name) + 'アクセス:' + JSON.stringify(json.results.shop[i].access) + 'ジャンル:' + JSON.stringify(json.results.shop[i].genre.name) + '</a>' +'</li>'
         }
         document.getElementById('page').innerHTML = a;
 

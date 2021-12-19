@@ -1,8 +1,7 @@
 var page = location.href;
+var page = page.toString();
 const API_KEY = gon.hotpepper_key;
-var page_substring = page.substring(page.length -1);
-// const ranges = document.form1.ranges;
-// const num = ranges.selectedIndex;
+var page_substring = page.substring(page.indexOf('homes/') + 6);
 if(page.match('homes')){
   // 現在地の取得
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
@@ -19,11 +18,13 @@ if(page.match('homes')){
       var detail_name = JSON.stringify(json.results.shop[page_substring].name);
       var detail_address = JSON.stringify(json.results.shop[page_substring].address);
       var detail_open = JSON.stringify(json.results.shop[page_substring].open);
-      console.log(detail_image);
+      var detail_access = JSON.stringify(json.results.shop[page_substring].access);
+      var detail_
       document.getElementById('image').innerHTML = '<img src=' + detail_image + '>'
       document.getElementById('name').innerHTML =  '店名:' + detail_name;
       document.getElementById('address').innerHTML = '住所:' + detail_address;
       document.getElementById('open').innerHTML = '営業時間:' + detail_open;
+      document.getElementById('access').innerHTML = 'アクセス:' + detail_access;
     });
     }
     function errorCallback(error) {
