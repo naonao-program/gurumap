@@ -18,7 +18,7 @@ window.addEventListener('load',function() {
       }).then(function(json) {
         var a = '';
         for(var i = 0; i < JSON.stringify(json.results.shop.length); i++){
-          a +=  '<li>' + '<a>' + '<img src =' + JSON.stringify(json.results.shop[i].logo_image) + '>' +'店名'+ JSON.stringify(json.results.shop[i].name) + 'アクセス' + JSON.stringify(json.results.shop[i].access) + '</a>' +'</li>'
+          a +=  '<li>' + '<a href="homes/' + i + '">' + '<img src =' + JSON.stringify(json.results.shop[i].logo_image) + '>' +'店名'+ JSON.stringify(json.results.shop[i].name) + 'アクセス' + JSON.stringify(json.results.shop[i].access) + '</a>' +'</li>'
         }
         document.getElementById('page').innerHTML = a;
 
