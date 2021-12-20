@@ -8,13 +8,13 @@ window.addEventListener('load',function() {
     document.getElementById('results').innerHTML = '検索結果'
     const ranges = document.form1.ranges;
     const num = ranges.selectedIndex;
-      // 現在地の取得
+
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
     function successCallback(position) {
       var longitude = position.coords.longitude;
       var latitude = position.coords.latitude;
       const url = 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=' + API_KEY + '&results_available' + '&lng=' + longitude + '&lat=' + latitude + '&range=' + num  + '&format=json' + '&count=100'
-      // JSONを取得
+
       fetch(url,{
       }).then(function(response) {
         return response.json();
@@ -26,14 +26,13 @@ window.addEventListener('load',function() {
         }
         document.getElementById('page').innerHTML = a;
 
-        // お店が10件以上見つかったらページネーションをする
       if (json.results.results_available > 10) {
         $(function() {
-          $('.page').paginathing({//親要素のclassを記述
-            perPage: 10,//1ページあたりの表示件数
-            prevText:'前へ',//1つ前のページへ移動するボタンのテキスト
-            nextText:'次へ',//1つ次のページへ移動するボタンのテキスト
-            activeClass: 'navi-active',//現在のページ番号に任意のclassを付与できます
+          $('.page').paginathing({
+            perPage: 10,
+            prevText:'前へ',
+            nextText:'次へ',
+            activeClass: 'navi-active',
           })
         });        
       }
