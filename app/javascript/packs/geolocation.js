@@ -1,5 +1,7 @@
 var page = location.href;
 const API_KEY = gon.hotpepper_key;
+
+
 window.addEventListener('load',function() {
   const click = document.getElementById('btn')
   click.addEventListener('click', function(){
@@ -12,12 +14,13 @@ window.addEventListener('load',function() {
     function successCallback(position) {
       var longitude = position.coords.longitude;
       var latitude = position.coords.latitude;
-      const url = 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=' + API_KEY + '&lng=' + longitude + '&lat=' + latitude + '&range=' + num  + '&format=json' + '&count=100'
+      const url = 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=' + API_KEY + '&results_available' + '&lng=' + longitude + '&lat=' + latitude + '&range=' + num  + '&format=json' + '&count=100'
       // JSONを取得
       fetch(url,{
       }).then(function(response) {
         return response.json();
       }).then(function(json) {
+        document.getElementById('results_available').innerHTML = json.results.results_available + "件見つかりました距離の近い順に表示しています。";
         var a = '';
         for(var i = 0; i < JSON.stringify(json.results.shop.length); i++){
           a +=  '<li>' + '<a href="homes/' + i + '" id= "text">' + '<img src =' + JSON.stringify(json.results.shop[i].logo_image) + '>' +'店名:'+ JSON.stringify(json.results.shop[i].name) + 'アクセス:' + JSON.stringify(json.results.shop[i].access) + 'ジャンル:' + JSON.stringify(json.results.shop[i].genre.name) + '</a>' +'</li>'
@@ -25,7 +28,19 @@ window.addEventListener('load',function() {
         document.getElementById('page').innerHTML = a;
 
         // お店が10件以上見つかったらページネーションをする
-
+      if (json.results.results_available > 10) {
+        console.log('10')
+        const i = Math.floor(json.results.results_available / 10) + 1;
+        for (let j = 0; j < i; j++) {
+          const span = document.createElement("a");
+          span.textContent = j + 1;
+          span.dataset.page = j + 1;
+          span.value = 10 * j + 1;
+          span.addEventListener("click", getPosition);
+          fragment.appendChild(span);
+        }
+        document.querySelector("span").appendChild(fragment);
+      }
       });
     }
     function errorCallback(error) {
