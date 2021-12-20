@@ -1,5 +1,6 @@
 var page = location.href;
 const API_KEY = gon.hotpepper_key;
+
 window.addEventListener('load',function() {
   const click = document.getElementById('btn')
   click.addEventListener('click', function(){
@@ -27,8 +28,14 @@ window.addEventListener('load',function() {
 
         // お店が10件以上見つかったらページネーションをする
       if (json.results.results_available > 10) {
-        console.log('10')
-        
+        $(function() {
+          $('.page').paginathing({//親要素のclassを記述
+            perPage: 10,//1ページあたりの表示件数
+            prevText:'前へ',//1つ前のページへ移動するボタンのテキスト
+            nextText:'次へ',//1つ次のページへ移動するボタンのテキスト
+            activeClass: 'navi-active',//現在のページ番号に任意のclassを付与できます
+          })
+        });        
       }
       });
     }

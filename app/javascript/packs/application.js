@@ -8,8 +8,9 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 
-require("./geolocation")
-require("./show")
+require("./geolocation");
+require("./show");
+require("./paginathing.min");
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
