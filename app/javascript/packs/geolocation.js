@@ -1,7 +1,5 @@
 var page = location.href;
 const API_KEY = gon.hotpepper_key;
-
-
 window.addEventListener('load',function() {
   const click = document.getElementById('btn')
   click.addEventListener('click', function(){
@@ -30,16 +28,7 @@ window.addEventListener('load',function() {
         // お店が10件以上見つかったらページネーションをする
       if (json.results.results_available > 10) {
         console.log('10')
-        const i = Math.floor(json.results.results_available / 10) + 1;
-        for (let j = 0; j < i; j++) {
-          const span = document.createElement("a");
-          span.textContent = j + 1;
-          span.dataset.page = j + 1;
-          span.value = 10 * j + 1;
-          span.addEventListener("click", getPosition);
-          fragment.appendChild(span);
-        }
-        document.querySelector("span").appendChild(fragment);
+        
       }
       });
     }
