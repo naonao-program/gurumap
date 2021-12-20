@@ -8,8 +8,8 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 
-require("./hotpepper")
 require("./geolocation")
+require("./show")
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
