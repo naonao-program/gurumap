@@ -3,13 +3,13 @@ var page = page.toString();
 const API_KEY = gon.hotpepper_key;
 var page_substring = page.substring(page.indexOf('homes/') + 6);
 if(page.match('homes')){
-  // 現在地の取得
+
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   function successCallback(position) {
     var longitude = position.coords.longitude;
     var latitude = position.coords.latitude;
     const url = 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=' + API_KEY + '&lng=' + longitude + '&lat=' + latitude + '&range=' + 5 + '&format=json' + '&count=100'
-    // JSONを取得
+
     fetch(url,{
     }).then(function(response) {
       return response.json();
@@ -19,7 +19,7 @@ if(page.match('homes')){
       var detail_address = JSON.stringify(json.results.shop[page_substring].address);
       var detail_open = JSON.stringify(json.results.shop[page_substring].open);
       var detail_access = JSON.stringify(json.results.shop[page_substring].access);
-      var detail_
+      
       document.getElementById('image').innerHTML = '<img src=' + detail_image + '>'
       document.getElementById('name').innerHTML =  '店名:' + detail_name;
       document.getElementById('address').innerHTML = '住所:' + detail_address;
