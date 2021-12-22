@@ -23,7 +23,7 @@ window.addEventListener('load',function() {
         var a = '';
         for(var i = 0; i < JSON.stringify(json.results.shop.length); i++){
           a +=  '<div class= "card mb-3">' + '<a href="homes/' + i + '" id= "text" class= "card-body text-secondary">' + '<img src =' + JSON.stringify(json.results.shop[i].logo_image) + '>' +'店名:'+ JSON.stringify(json.results.shop[i].name).replace(/"/g,"") + '<br>' 
-          + '予算:' + JSON.stringify(json.results.shop[i].budget.average).replace(/"/g,"") + '<br>' + 'アクセス:' + JSON.stringify(json.results.shop[i].access).replace(/"/g,"") + '<br>' + 'ジャンル:' + JSON.stringify(json.results.shop[i].genre.name).replace(/"/g,"") + '</a>' +'</li>' + '</div>'
+          + '<div class= "fas fa-yen-sign"></div>' + '予算:' + JSON.stringify(json.results.shop[i].budget.average).replace(/"/g,"") + '<br>' + 'アクセス:' + JSON.stringify(json.results.shop[i].access).replace(/"/g,"") + '<br>' + 'ジャンル:' + JSON.stringify(json.results.shop[i].genre.name).replace(/"/g,"") + '</a>' +'</li>' + '</div>'
         }
         document.getElementById('page').innerHTML = a;
 
