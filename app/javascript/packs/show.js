@@ -15,12 +15,12 @@ if(page.match('homes')){
       return response.json();
     }).then(function(json) {
       var detail_image = JSON.stringify(json.results.shop[page_substring].photo.pc.l);
-      var detail_name = JSON.stringify(json.results.shop[page_substring].name);
-      var detail_address = JSON.stringify(json.results.shop[page_substring].address);
-      var detail_open = JSON.stringify(json.results.shop[page_substring].open);
-      var detail_access = JSON.stringify(json.results.shop[page_substring].access);
-      var detail_private_room = JSON.stringify(json.results.shop[page_substring].private_room);
-      var detail_parking = JSON.stringify(json.results.shop[page_substring].parking);
+      var detail_name = JSON.stringify(json.results.shop[page_substring].name).replace(/"/g,"");
+      var detail_address = JSON.stringify(json.results.shop[page_substring].address).replace(/"/g,"");
+      var detail_open = JSON.stringify(json.results.shop[page_substring].open).replace(/"/g,"");
+      var detail_access = JSON.stringify(json.results.shop[page_substring].access).replace(/"/g,"");
+      var detail_private_room = JSON.stringify(json.results.shop[page_substring].private_room).replace(/"/g,"");
+      var detail_parking = JSON.stringify(json.results.shop[page_substring].parking).replace(/"/g,"");
       
       document.getElementById('image').innerHTML = '<img src=' + detail_image + '>'
       document.getElementById('name').innerHTML =  '店名:' + detail_name;
