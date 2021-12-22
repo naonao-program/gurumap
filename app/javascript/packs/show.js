@@ -2,8 +2,10 @@ var page = location.href;
 var page = page.toString();
 const API_KEY = gon.hotpepper_key;
 var page_substring = page.substring(page.indexOf('homes/') + 6);
+window.addEventListener("load",function(){
+  document.getElementById("image").innerHTML =  '読み込み中'
+})
 if(page.match('homes')){
-
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   function successCallback(position) {
     var longitude = position.coords.longitude;
