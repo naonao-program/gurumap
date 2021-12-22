@@ -19,12 +19,16 @@ if(page.match('homes')){
       var detail_address = JSON.stringify(json.results.shop[page_substring].address);
       var detail_open = JSON.stringify(json.results.shop[page_substring].open);
       var detail_access = JSON.stringify(json.results.shop[page_substring].access);
+      var detail_private_room = JSON.stringify(json.results.shop[page_substring].private_room);
+      var detail_parking = JSON.stringify(json.results.shop[page_substring].parking);
       
       document.getElementById('image').innerHTML = '<img src=' + detail_image + '>'
       document.getElementById('name').innerHTML =  '店名:' + detail_name;
       document.getElementById('address').innerHTML = '住所:' + detail_address;
       document.getElementById('open').innerHTML = '営業時間:' + detail_open;
       document.getElementById('access').innerHTML = 'アクセス:' + detail_access;
+      document.getElementById('private_room').innerHTML = '個室:' + detail_private_room;
+      document.getElementById('parking').innerHTML = '駐車場:' + detail_parking;
     });
     }
     function errorCallback(error) {
