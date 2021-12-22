@@ -13,9 +13,6 @@
 #### こだわったポイント
 一覧をBootstrapを使ってカード上に表示させた
 
-### 公開したアプリの URL（Store にリリースしている場合）
-
-
 ### 該当プロジェクトのリポジトリ URL（GitHub,GitLab など Git ホスティングサービスを利用されている場合）
 https://github.com/naonao-program/gurumap
 
@@ -79,3 +76,5 @@ Mac OS BigSur var11.6
 - 詳細ページでお店の場所をGoogleMap上にピンを立てたい
 
 - 位置情報だけなく、いろんな条件で検索できるようにしたい
+
+- 100件以上見れるように実装したい
