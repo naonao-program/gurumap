@@ -23,12 +23,12 @@ if(page.match('homes')){
       var detail_parking = JSON.stringify(json.results.shop[page_substring].parking).replace(/"/g,"");
       
       document.getElementById('image').innerHTML = '<img src=' + detail_image + '>'
-      document.getElementById('name').innerHTML =  '店名:' + detail_name;
-      document.getElementById('address').innerHTML = '<div class="fas fa-subway"></div>' +'住所:' + detail_address;
-      document.getElementById('open').innerHTML = '<div class="fas fa-clock"></div>' +'営業時間:' + detail_open;
+      document.getElementById('name').innerHTML = '<div class="fas fa-store"></div>' + '店名:' + detail_name;
+      document.getElementById('address').innerHTML = '<div class="fas fa-subway"></div>' + '住所:' + detail_address;
+      document.getElementById('open').innerHTML = '<div class="fas fa-clock"></div>' + '営業時間:' + detail_open;
       document.getElementById('access').innerHTML = '<div class="fas fa-map-marker-alt"></div>' + 'アクセス:' + detail_access;
       document.getElementById('private_room').innerHTML = '<div class="fas fa-person-booth"></div>' + '個室:' + detail_private_room;
-      document.getElementById('parking').innerHTML = '<div class="fas fa-parking"></div>' +'駐車場:' + detail_parking;
+      document.getElementById('parking').innerHTML = '<div class="fas fa-parking"></div>' + '駐車場:' + detail_parking;
     });
     }
     function errorCallback(error) {
