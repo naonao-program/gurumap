@@ -46,6 +46,17 @@ if(page.match('homes')){
         position: new google.maps.LatLng(json.results.shop[page_substring].lat, json.results.shop[page_substring].lng),
         map: map
       });
+      var myInfoWindow = new google.maps.InfoWindow({
+        // 吹き出しに出す文
+        content: JSON.stringify(json.results.shop[page_substring].name).replace(/"/g,"")
+      });
+        // 吹き出しを開く
+        myInfoWindow.open(map, myMarker);
+        google.maps.event.addListener(myInfoWindow, "closeclick", function() {
+          google.maps.event.addListenerOnce(myMarker, "click", function(event) {
+            myInfoWindow.open(map, myMarker);
+          });
+        });
         //  #Map上の指定した位置にピンを挿して表示する
       var map = new google.maps.Map(document.getElementById('map'), Options);
     });
