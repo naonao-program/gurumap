@@ -31,6 +31,8 @@ if(page.match('homes')){
       document.getElementById('access').innerHTML = '<div class="fas fa-map-marker-alt"></div>' + 'アクセス:' + detail_access;
       document.getElementById('private_room').innerHTML = '<div class="fas fa-person-booth"></div>' + '個室:' + detail_private_room;
       document.getElementById('parking').innerHTML = '<div class="fas fa-parking"></div>' + '駐車場:' + detail_parking;
+
+      // mapの表示
     });
     }
     function errorCallback(error) {
