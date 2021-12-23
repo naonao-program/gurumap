@@ -19,10 +19,11 @@ window.addEventListener('load',function() {
       }).then(function(response) {
         return response.json();
       }).then(function(json) {
-        document.getElementById('results_available').innerHTML = json.results.results_available + "件見つかりました距離の近い順に表示しています。";
+        document.getElementById('results_available').innerHTML = json.results.results_available + "件見つかりました！"+ "<br>" + "１０件ずつ表示しています!" + "<br>" + "最初の100件を表示しています！" + "<br>" + "距離の近い順に表示しています。";
         var a = '';
         for(var i = 0; i < JSON.stringify(json.results.shop.length); i++){
-          a +=  '<li>' + '<a href="homes/' + i + '" id= "text">' + '<img src =' + JSON.stringify(json.results.shop[i].logo_image) + '>' +'店名:'+ JSON.stringify(json.results.shop[i].name) + 'アクセス:' + JSON.stringify(json.results.shop[i].access) + 'ジャンル:' + JSON.stringify(json.results.shop[i].genre.name) + '</a>' +'</li>'
+          a +=  '<div class= "card mb-3">' + '<a href="homes/' + i + '" id= "text" class= "card-body text-secondary">' + '<img src =' + JSON.stringify(json.results.shop[i].logo_image) + '>' + '<div class="fas fa-store"></div>' + '店名:'+ JSON.stringify(json.results.shop[i].name).replace(/"/g,"") + '<br>' 
+          + '<div class= "fas fa-yen-sign"></div>' + '予算:' + JSON.stringify(json.results.shop[i].budget.average).replace(/"/g,"") + '<br>' + '<div class="fas fa-map-marker-alt"></div>' + 'アクセス:' + JSON.stringify(json.results.shop[i].access).replace(/"/g,"") + '<br>' + '<div class="fas fa-utensils"></div>' + 'ジャンル:' + JSON.stringify(json.results.shop[i].genre.name).replace(/"/g,"") + '</a>' +'</li>' + '</div>'
         }
         document.getElementById('page').innerHTML = a;
 
@@ -34,7 +35,7 @@ window.addEventListener('load',function() {
             nextText:'次へ',
             activeClass: 'navi-active',
           })
-        });        
+        });
       }
       });
     }

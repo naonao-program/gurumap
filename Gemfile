@@ -71,3 +71,5 @@ gem 'dotenv-rails'
 gem 'httpclient'
 
 gem 'rack-cors'
+
+gem 'font-awesome-sass'
