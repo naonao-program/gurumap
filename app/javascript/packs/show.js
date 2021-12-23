@@ -33,6 +33,21 @@ if(page.match('homes')){
       document.getElementById('parking').innerHTML = '<div class="fas fa-parking"></div>' + '駐車場:' + detail_parking;
 
       // mapの表示
+      console.log(json.results.shop[2].lat)
+      console.log(json.results.shop[2].lng)
+      var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 16,
+        center: new google.maps.LatLng(json.results.shop[page_substring].lat, json.results.shop[page_substring].lng),
+        scrollwheel: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+      var myMarker = new google.maps.Marker({
+        // マーカーアイコン
+        position: new google.maps.LatLng(json.results.shop[page_substring].lat, json.results.shop[page_substring].lng),
+        map: map
+      });
+        //  #Map上の指定した位置にピンを挿して表示する
+      var map = new google.maps.Map(document.getElementById('map'), Options);
     });
     }
     function errorCallback(error) {
