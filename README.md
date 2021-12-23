@@ -12,7 +12,7 @@
 
 #### こだわったポイント
 一覧をBootstrapを使ってカード上に表示させた
-GoogleMapsを使ってお店の場所にピンを立て表示させた
+GoogleMapsを使ってお店の場所にピンを立てお店の名前を表示した点
 ### 該当プロジェクトのリポジトリ URL（GitHub,GitLab など Git ホスティングサービスを利用されている場合）
 https://github.com/naonao-program/gurumap
 
