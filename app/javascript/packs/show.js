@@ -31,6 +31,34 @@ if(page.match('homes')){
       document.getElementById('access').innerHTML = '<div class="fas fa-map-marker-alt"></div>' + 'アクセス:' + detail_access;
       document.getElementById('private_room').innerHTML = '<div class="fas fa-person-booth"></div>' + '個室:' + detail_private_room;
       document.getElementById('parking').innerHTML = '<div class="fas fa-parking"></div>' + '駐車場:' + detail_parking;
+
+      // mapの表示
+      console.log(json.results.shop[2].lat)
+      console.log(json.results.shop[2].lng)
+      var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 16,
+        center: new google.maps.LatLng(json.results.shop[page_substring].lat, json.results.shop[page_substring].lng),
+        scrollwheel: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+      var myMarker = new google.maps.Marker({
+        // マーカーアイコン
+        position: new google.maps.LatLng(json.results.shop[page_substring].lat, json.results.shop[page_substring].lng),
+        map: map
+      });
+      var myInfoWindow = new google.maps.InfoWindow({
+        // 吹き出しに出す文
+        content: JSON.stringify(json.results.shop[page_substring].name).replace(/"/g,"")
+      });
+        // 吹き出しを開く
+        myInfoWindow.open(map, myMarker);
+        google.maps.event.addListener(myInfoWindow, "closeclick", function() {
+          google.maps.event.addListenerOnce(myMarker, "click", function(event) {
+            myInfoWindow.open(map, myMarker);
+          });
+        });
+        //  #Map上の指定した位置にピンを挿して表示する
+      var map = new google.maps.Map(document.getElementById('map'), Options);
     });
     }
     function errorCallback(error) {
