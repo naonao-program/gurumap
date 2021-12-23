@@ -41,7 +41,7 @@ Mac OS BigSur var11.6
 [![Image from Gyazo](https://i.gyazo.com/e9155fef0fbdc6693b8f8244ac621f20.gif)](https://gyazo.com/e9155fef0fbdc6693b8f8244ac621f20)
 
 3.一覧からお店のカードをクリックするとお店の詳細ページに飛べる
-[![Image from Gyazo](https://i.gyazo.com/c06978cfbb660dfd68cbec2254ca85e8.gif)](https://gyazo.com/c06978cfbb660dfd68cbec2254ca85e8)
+[![Image from Gyazo](https://i.gyazo.com/3fc5fe96c8b76f5aeda83b35ab96ade7.gif)](https://gyazo.com/3fc5fe96c8b76f5aeda83b35ab96ade7)
 
 ### 機能一覧
 - レストラン検索：ホットペッパー グルメサーチ APIを使用とGeolocation APIを使って現在地周辺の飲食店を検索する。
