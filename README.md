@@ -1,4 +1,4 @@
-# 簡易仕様書サンプル
+# 簡易仕様書
 ## 動作させる場合は必ず下記のURLのダウンロードをお願いします。
 - Chrome拡張機能:https://chrome.google.com/webstore/detail/cross-domain-cors/mjhpgnbimicffchbodmgfnemoghjakai/related?hl=ja
 
